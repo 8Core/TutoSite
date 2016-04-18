@@ -1,58 +1,6 @@
-var app = angular.module('StarterApp', ['ngMaterial', 'satellizer']);
-//CONFIGURATION
-app.config(function($authProvider) {
+var app = angular.module('StarterApp', ['ngMaterial']);
 
-    $authProvider.facebook({
-      clientId: '439513662912425'
-    });
-
-    // Optional: For client-side use (Implicit Grant), set responseType to 'token'
-    /*$authProvider.facebook({
-      clientId: 'Facebook App ID',
-      responseType: 'token'
-    });*/
-
-     // Facebook
-    /*$authProvider.facebook({
-      name: 'facebook',
-      url: '/auth/facebook',
-      clientId: '439513662912425',
-      authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
-      redirectUri: window.location.origin + '/',
-      requiredUrlParams: ['display', 'scope'],
-      scope: ['email'],
-      scopeDelimiter: ',',
-      display: 'popup',
-      type: '2.0',
-      popupOptions: { width: 580, height: 400 }
-    });*/
-
-  });
-
-//CONTROLLERS
-app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', '$auth', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $auth){
-
-    //Funciones para prueba de satellizer
-    $scope.authenticate = function(provider){
-        $auth.authenticate(provider)
-        .then(function() {
-            alert('You have successfully signed in with ' + provider + '!');
-        })
-        .catch(function(error) {
-          if (error.error) {
-            // Popup error - invalid redirect_uri, pressed cancel button, etc.
-              console.log(error.error);
-            //toastr.error(error.error);
-          } else if (error.data) {
-            // HTTP response error from server
-              console.log(error.data.message, error.status);
-            //toastr.error(error.data.message, error.status);
-          } else {
-            //toastr.error(error);
-              console.log(error);
-          }
-        });
-    }
+app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
 
   // Toolbar search toggle
   $scope.toggleSearch = function(element) {
@@ -92,6 +40,80 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       link : 'showListBottomSheet($event)',
       title: 'Settings',
       icon: 'action:ic_settings_24px'
+    }
+  ];
+
+  // Cursos
+  $scope.cursos=[
+    {
+      name: 'Quimica General',
+      descripcion: 'Isotopos, tablas periodicas, elementos entre otros',
+      resultado: '6 resultados cerca de ti',
+      avatar: 'images/mate.png'
+    },
+    {
+      name: 'Matematica Basica',
+      descripcion: 'Funciones cuadraticas, lineales, cubicas, areas',
+      resultado: '6 resultados cerca de ti',
+      avatar: 'images/mate.png'
+    },
+    {
+      name: 'Matematica Intermedia',
+      descripcion: 'Areas mas completas',
+      resultado: '6 resultados cerca de ti',
+      avatar: 'images/mate.png'
+    },
+    {
+      name: 'Estadistica basica',
+      descripcion: 'Combinaciones y Permutaciones',
+      resultado: '6 resultados cerca de ti',
+      avatar: 'images/mate.png'
+    },
+    {
+      name: 'Redes de computadoras',
+      descripcion: 'Router, Switch, Host',
+      resultado: '6 resultados cerca de ti',
+      avatar: 'images/mate.png'
+    }
+  ];
+
+  // Cursos
+  $scope.usuarios=[
+    {
+      name: 'Francisco Ardon',
+      descripcion: 'Basica',
+      resultado: 'Q10 la hora',
+      avatar: '../images/photo.png'
+    },
+    {
+      name: 'Jose Estrada',
+      descripcion: 'Media',
+      resultado: 'Q20 la hora',
+      avatar: '../images/photo.png'
+    },
+    {
+      name: 'Jeyson Montenegro',
+      descripcion: 'Alta',
+      resultado: 'Q30 la hora',
+      avatar: '../images/photo.png'
+    },
+    {
+      name: 'Jeremias Ortega',
+      descripcion: 'Muy alta',
+      resultado: 'Q40 la hora',
+      avatar: '../images/photo.png'
+    },
+    {
+      name: 'Kenneth Ubeda',
+      descripcion: 'Experto',
+      resultado: 'Q50 la hora',
+      avatar: '../images/photo.png'
+    },
+    {
+      name: 'Eiji de Paz',
+      descripcion: 'Experto',
+      resultado: 'Q50 la hora',
+      avatar: '../images/photo.png'
     }
   ];
 
