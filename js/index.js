@@ -1,6 +1,58 @@
-var app = angular.module('StarterApp', ['ngMaterial']);
+var app = angular.module('StarterApp', ['ngMaterial', 'satellizer']);
+//CONFIGURATION
+app.config(function($authProvider) {
 
-app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
+    $authProvider.facebook({
+      clientId: '439513662912425'
+    });
+
+    // Optional: For client-side use (Implicit Grant), set responseType to 'token'
+    /*$authProvider.facebook({
+      clientId: 'Facebook App ID',
+      responseType: 'token'
+    });*/
+
+     // Facebook
+    /*$authProvider.facebook({
+      name: 'facebook',
+      url: '/auth/facebook',
+      clientId: '439513662912425',
+      authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
+      redirectUri: window.location.origin + '/',
+      requiredUrlParams: ['display', 'scope'],
+      scope: ['email'],
+      scopeDelimiter: ',',
+      display: 'popup',
+      type: '2.0',
+      popupOptions: { width: 580, height: 400 }
+    });*/
+
+  });
+
+//CONTROLLERS
+app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', '$auth', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $auth){
+
+    //Funciones para prueba de satellizer
+    $scope.authenticate = function(provider){
+        $auth.authenticate(provider)
+        .then(function() {
+            alert('You have successfully signed in with ' + provider + '!');
+        })
+        .catch(function(error) {
+          if (error.error) {
+            // Popup error - invalid redirect_uri, pressed cancel button, etc.
+              console.log(error.error);
+            //toastr.error(error.error);
+          } else if (error.data) {
+            // HTTP response error from server
+              console.log(error.data.message, error.status);
+            //toastr.error(error.data.message, error.status);
+          } else {
+            //toastr.error(error);
+              console.log(error);
+          }
+        });
+    }
 
   // Toolbar search toggle
   $scope.toggleSearch = function(element) {
