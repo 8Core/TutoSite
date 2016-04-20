@@ -60,3 +60,6 @@ md-list-item.md-3-line md-divider[md-inset] {
   height: 150px;
   max-height: 150px;
 }
+md-subheader{
+  margin-right: 0;
+}
