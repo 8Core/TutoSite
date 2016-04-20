@@ -150,10 +150,10 @@
                    md-swipe-right="previous()"
                    layout="row" layout-align="center center">
                 <div flex-gt-sm="90" flex-gt-md="80">
-                  <h2 class="md-title inset">Elija su curso</h2>
+                  <h2 class="md-title inset">Elija su Tutor</h2>
                   <md-card>
                     <md-list>
-                      <md-list-item class="md-3-line" ng-href="/whatever" ng-repeat="item in cursos | filter:search | orderBy:'-name'">
+                      <md-list-item class="md-3-line" ng-href="/whatever" ng-repeat="item in usuarios | filter:search | orderBy:'-name'">
                         <!--<md-icon class="md-avatar" hide-sm md-svg-icon="avatars:{{item.avatar}}"></md-icon>-->
                         <img class="md-avatar" ng-src='{{item.avatar}}'>
                         <div class="md-list-item-text">
@@ -178,7 +178,6 @@
                 </div>
               </div>
           </ng-switch>
-
         </ui-view>
       </md-content>
     </div>
