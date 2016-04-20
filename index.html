@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Angular Material Design Starter App</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -10,7 +12,7 @@
   <head>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
   </head>
-  <body layout="row" ng-controller="AppCtrl">
+  <body layout="row" ng-controller="AppCtrl" ng-cloak>
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2"
     md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <md-toolbar class="md-hue-3">

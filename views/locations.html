@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TutoSite</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body >
+    <span ng-app="TutoSiteApp">
+
+     <!--<div layout="column" layout-fill>-->
+          <md-toolbar md-scroll-shrink md-shrink-speed-factor="0.5">
+            <div class="md-toolbar-tools">
+              <h3><span>Tutores en el Area</span></h3>
+            </div>
+          </md-toolbar>
+          <md-content layout="column" flex class="layout-fill" class="content-wrapper" ng-controller="locationSearchCtrl">
+          </md-content>
+          <div id="locationSearchMap" class="theMap"></div>
+      
+    </span>
+    <!-- Angular Material Dependencies -->
+
+    <script src='https://maps.googleapis.com/maps/api/js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-messages.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+   <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+   <!-- Angular Material
+   <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+ --><!-- Maps Api -->
+   <!-- Controller -->
+    <script src="../js/controllers.js"></script>
+    <script src="../js/lib/ngGeolocation.min.js"></script>
+    <script src="../js/lib/angular-google-maps.min.js"></script>
+  </body>
+</html>
