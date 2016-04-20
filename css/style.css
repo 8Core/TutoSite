@@ -53,3 +53,10 @@ md-list-item.md-3-line md-divider[md-inset] {
     height: calc(100% - 244px);
     margin: 63px 0px 0px 0px;
 }
+
+/* ---- SIdeNav en--------*/
+#sideNav{
+  padding: 15px;
+  height: 150px;
+  max-height: 150px;
+}
