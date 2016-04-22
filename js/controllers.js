@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var app = angular.module('TutoSiteApp', ['ngMaterial','ngGeolocation']);
+  var app = angular.module('TutoSiteApp', ['ngMaterial','ngGeolocation','ngMessages']);
   app.controller('drawerCtrl',['$scope','$mdSidenav',function($scope,$mdSidenav) {
     $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
@@ -44,29 +44,34 @@
       },*/
     ];
   }]);
-  app.controller('myLinksCtrl', function($scope) {
+  app.controller('myLinksCtrl', ['$scope','$mdDialog',function($scope,$mdDialog) {
     $scope.mylinks = [
       {
         name: 'Juan',
         lastName: 'Ramirez',
-        profile: ''
+        profile: 'avatars:svg-5'
       },
       {
         name: 'Pedro',
         lastName: 'Escalante',
-        profile: ''
+        profile: 'avatars:svg-5'
       },
       {
         name: 'Maria',
         lastName: 'Agustin',
-        profile: ''
+        profile: 'avatars:svg-5'
+      },
+      {
+        name: 'Maria',
+        lastName: 'Agustin',
+        profile: 'avatars:svg-5'
       }
     ];
     $scope.goToMyLink = function(item, event) {
       $mdDialog.show(
         $mdDialog.alert()
           .title('Usuario')
-          .textContent('Inspect ' + item)
+          .content('Inspect ' + item)
           .ariaLabel('Perfil de Usuario')
           .ok('Neat!')
           .targetEvent(event)
@@ -76,13 +81,13 @@
          $mdDialog.show(
            $mdDialog.alert()
              .title('Secondary Action')
-             .textContent('Secondary actions can be used for one click actions')
+             .content('Secondary actions can be used for one click actions')
              .ariaLabel('Secondary click demo')
              .ok('Neat!')
              .targetEvent(event)
            );
     };
-  });
+  }]);
   app.controller('locationSearchCtrl', ['$geolocation','$scope',locationSearchCtrl]);
   function locationSearchCtrl($geolocation,$scope) {
     /*$geolocation.watchPosition({
