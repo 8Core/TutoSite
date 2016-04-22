@@ -152,35 +152,3 @@
         .defaultIconSet('https://raw.githubusercontent.com/google/material-design-icons/master/sprites/svg-sprite/svg-sprite-action.svg', 24);
   });
 })();
-
-/*
-//Implementacion utilizando librerias ubicacion del GPS
-app.controller('locationSearchMapGPSCtrl',['$geolocation','$scope',function($geolocation,$scope){
-  $geolocation.watchPosition(
-    {
-      timeout: 60000,
-      maximumAge: 250,
-      enableHighAccuracy: true
-    })
-  $scope.$watch('myPosition.coords', function (newValue, oldValue)
-  {
-    $scope.map = {
-      center: {
-        latitude: newValue.latitude,
-        longitude: newValue.longitude
-      },
-      zoom: 16
-    };
-  }, true);
-
-}]);
-//Implementacion randomica con posicion quemada usando tambien google-maps
-app.controller('locationSearchMapBurnCtrl',function($scope){
-  GoogleMapsLoader.load(function(google){
-    var mapOptions = {
-      zoom: 11,
-      center: new google.maps.LatLng(54.5767,-1.2355)
-    };
-    _map = new google.maps.Map(document.getElementById('map'),mapOptions);
-  });
-});*/
