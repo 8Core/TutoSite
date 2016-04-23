@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var app = angular.module('TutoSiteApp', ['ngMaterial','ngGeolocation','ngMessages']);
+  var app = angular.module('TutoSiteApp', ['factories','ng-mfb','ngMaterial','ngGeolocation','ngMessages']);
   app.controller('drawerCtrl',['$scope','$mdSidenav',function($scope,$mdSidenav) {
     $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
@@ -88,32 +88,17 @@
            );
     };
   }]);
-  app.controller('locationSearchCtrl', ['$geolocation','$scope',locationSearchCtrl]);
-  function locationSearchCtrl($geolocation,$scope) {
+  app.controller('locationSearchCtrl', ['$geolocation','$scope','factory',locationSearchCtrl]);
+  function locationSearchCtrl($geolocation,$scope, factory) {
     /*$geolocation.watchPosition({
               timeout: 60000,
               maximumAge: 250,
               enableHighAccuracy: true
       });
       $scope.myCoords = $geolocation.position.coords;*/
-      var map;
-      var geocoder;
-      $scope.view = {
-        addressInput: '',
-        places: [],
-        selectedPlace: '',
-        markers: []
-      };
-      inicializeComponents();
+      captureUserLocation();
       function inicializeComponents() {
-        var mapConfig = {
-          center: {lat: 14.595679, lng:-90.547002},
-          zoom: 17,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById('locationSearchMap'),mapConfig);
-        geocoder = new google.maps.Geocoder();
-        var marker = new google.maps.Marker(
+        /*var marker = new google.maps.Marker(
           {
             position: {lat: 14.595679, lng:-90.547002},
             optimized: false,
@@ -128,7 +113,45 @@
           marker.addListener('click', function()
           {
             infowindow.open(map, marker);
-          });
+          });*/
+      }
+      function captureUserLocation() {
+        factory.getCurrentPosition().then(function(positionOk)
+        {
+          var map;
+          var geocoder;
+          $scope.view = {
+            addressInput: '',
+            places: [],
+            selectedPlace: '',
+            markers: []
+          };
+          var mapConfig = {
+            center: {lat: positionOk.coords.latitude, lng: positionOk.coords.longitude},
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          map = new google.maps.Map(document.getElementById('locationSearchMap'),mapConfig);
+          geocoder = new google.maps.Geocoder();
+          var marker = new google.maps.Marker(
+            {
+              position: {lat: positionOk.coords.latitude, lng: positionOk.coords.longitude},
+              optimized: false,
+              title: "Sharolin Lupita Lacunza Gonz!!"
+            }
+          );
+          marker.setMap(map);
+        },
+        function(positionWrong) {
+          var mapConfig = {
+            center:  {lat: 14.6283316, lng: -90.5111596},
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          map = new google.maps.Map(document.getElementById('locationSearchMap'),mapConfig);
+          geocoder = new google.maps.Geocoder();
+        });
+
       }
   }
 

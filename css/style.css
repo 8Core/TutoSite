@@ -50,8 +50,8 @@ md-list-item.md-3-line md-divider[md-inset] {
   overflow: hidden;
 }
 .theMap {
-    height: calc(100% - 244px);
-    margin: 63px 0px 0px 0px;
+    height: calc(100% - 65px);
+    margin: 0px 0px 0px 0px;
 }
 
 /* ---- SIdeNav en--------*/
@@ -62,4 +62,14 @@ md-list-item.md-3-line md-divider[md-inset] {
 }
 md-subheader{
   margin-right: 0;
+}
+/* ---- FAB button Locations ------*/
+md-fab-actions{
+  width: 65px;
+}
+md-fab-speed-dial{
+  align-items: flex-end;
+  position: absolute;
+  /*margin-left: calc(100% - 65px);*/
+   margin-left: 80%;
 }

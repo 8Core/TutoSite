@@ -7,18 +7,34 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/lib/mfb/mfb.min.css">
   </head>
   <body >
     <span ng-app="TutoSiteApp">
-
-     <!--<div layout="column" layout-fill>-->
           <md-toolbar md-scroll-shrink md-shrink-speed-factor="0.5">
             <div class="md-toolbar-tools">
               <h3><span>Tutores en el Area</span></h3>
             </div>
           </md-toolbar>
-          <md-content layout="column" flex class="layout-fill" class="content-wrapper" ng-controller="locationSearchCtrl">
-          </md-content>
+          <div layout="column" class="relative" layout-fill role="main" ng-controller="locationSearchCtrl">
+            <md-fab-speed-dial  md-direction="down" class="md-fab-top-right ">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab">
+                <md-icon md-svg-src="content:ic_add_24px"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+              <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                <md-icon md-svg-src="social:ic_group_24px" aria-label="Twitter"></md-icon>
+              </md-button>
+              <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                <md-icon md-svg-src="action:ic_dashboard_24px" aria-label="Facebook"></md-icon>
+              </md-button>
+              <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+              <md-icon md-svg-src="content:ic_add_24px" aria-label="Google Hangout"></md-icon>
+              </md-button>
+            </md-fab-actions></md-fab-speed-dial>
+          </div>
           <div id="locationSearchMap" class="theMap"></div>
 
     </span>
@@ -39,7 +55,11 @@
    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
  --><!-- Maps Api -->
    <!-- Controller -->
+   <script src="../js/factories/factory.js"></script>
     <script src="../js/controllers.js"></script>
+    <!-- Floating Button -->
+    <script src="../js/lib/mfb/mfb.min.js"></script>
+    <script src="../js/lib/mfb-directive.js"></script>
     <script src="../js/lib/ngGeolocation.min.js"></script>
     <script src="../js/lib/angular-google-maps.min.js"></script>
   </body>
