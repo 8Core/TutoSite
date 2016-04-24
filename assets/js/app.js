@@ -1,25 +1,10 @@
-'use strict';
-
-var todoApp = angular.module('todoApp', ['ui.bootstrap', 'ui.router']);
-
-todoApp.config(['$stateProvider', '$httpProvider', '$urlRouterProvider', function ($stateProvider, $httpProvider, $urlRouterProvider) {
+/*
+    Módulo general que contiene todas las dependencias a utilizar
+*/
+(function () {
+    'use strict';
     
-    $httpProvider.defaults.headers.post['Content-Type'] = "application/json";
-    
-    $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: 'templates/home.html',
-            controller: 'HomeCtrl'
-        })
-        .state('das', {
-            url: '/das',
-            templateUrl: 'templates/todo.html',
-            controller: 'DasCtrl'
-        })
+    angular
+        .module('app', ['ui.bootstrap', 'ui.router', 'app.routes']);
 
-    // Redirecciones por defecto ante rutas en blanco o rutas queno estén definidas
-    $urlRouterProvider.when('', 'home');
-    $urlRouterProvider.otherwise('home');
-
-  }]);
+})();
