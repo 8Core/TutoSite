@@ -3,9 +3,14 @@ a [Sails](http://sailsjs.org) application
 
 ## Tutorial de integración [Angular-Sails](https://scotch.io/tutorials/build-a-todo-app-using-sailsjs-and-angularjs).
 >Tutorial utilizado para integrar Angular en una aplicación Sails.
->Con la excepción que no se utilizó Bower, sino que se agragaron las dependencias
->de AngularJS de forma manual a la carpeta Assets/js/dependencies, de tal forma que un
->Task interno carga todas las dependencias de forma automática.
+
+## Manejo de dependencias
+Todos las dependencias externas como AngularJs, Bootstrap, etc. son manejadas mediante bower con el fin de que sea más facil instalarlas y que el repositorio no crezca en espacio. en la raiz está el archivo bower con todas las dependencias a instalar.
+
+- Ejecutar *$ bower install*. Los componentes se instalarán en */assets/bower_components* ya que el archivo *.bowerrc* define la ruta de los componentes hacia los Assets.
+- Para agregar dependencias luego de instalarlas se tienen que ir al archivo ubicado en *tasks/pipeline.js* que es una tarea que se ejecuta cuando se levanta el servidor.
+- Agregar la ruta de dependencia dentro del arreglo *jsFilesToInject* después de la dependencia *js/dependencies/sails.io.js*.
+- La ruta se agrega con el siguiente esquema */bower_components/ruta_a_archivo*.
 
 ## Instalar plugin [FuncDocr](https://github.com/wikunia/brackets-funcdocr)
 Para comentar funciones JS de forma fácil, tal como se haría con otro IDE. Con el fin de mantener una convención para entender los contenidos.
