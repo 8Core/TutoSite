@@ -114,7 +114,7 @@
                    md-swipe-left="next()"
                    md-swipe-right="previous()"
                    layout="row" layout-align="center center">
-                <div flex-gt-sm="90" flex-gt-md="80">
+                <div flex-gt-sm="90" flex-gt-md="80" ng-controller="objcontroller as obj">
                   <h2 class="md-title inset">Elija su curso</h2>
                   <md-card>
                     <md-list>
@@ -145,6 +145,8 @@
                 </div>
                 <!--<button ng-click="authenticate('facebook')">Sign in with Facebook</button>-->
               </div>
+
+
               <div role="tabpanel"
                    id="tab2-content"
                    aria-labelledby="tab2"
@@ -152,7 +154,7 @@
                    md-swipe-left="next()"
                    md-swipe-right="previous()"
                    layout="row" layout-align="center center">
-                <div flex-gt-sm="90" flex-gt-md="80">
+                <div flex-gt-sm="90" flex-gt-md="80" ng-controller="objcontroller">
                   <h2 class="md-title inset">Elija su curso</h2>
                   <md-card>
                     <md-list>
@@ -194,11 +196,7 @@
     <script src="//cdn.jsdelivr.net/satellizer/0.14.0/satellizer.min.js"></script>
   </body>
 </html>
-
         <script src="js/index.js"></script>
-
-
-
-
+        <script src="js/objcontroller.js"></script>
   </body>
 </html>
