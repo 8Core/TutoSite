@@ -13,7 +13,7 @@
       }*/
     </style>
   </head>
-  <body layout="column" ng-controller="drawerCtrl">
+  <body layout="column" ng-controller="sideNavCtrl">
     <md-sidenav  layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" >
       <md-toolbar id="sideNav" class="md-hue-3">
         <span flex></span>
@@ -84,8 +84,12 @@
 
     <!-- Angular Material -->
     <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
-     <script src="../js/controllers.js"></script>
-     <script src="../js/lib/ngGeolocation.min.js"></script>
-     <script src="../js/lib/angular-google-maps.min.js"></script>
+    <script src="../js/app.module.js.js"></script>
+    <script src="../js/linksController.js"></script>
+    <script src="../js/sideNavController.js"></script>
+    <script src="../js/factories/factory.js"></script>
+    
+    <script src="../js/lib/ngGeolocation.min.js"></script>
+    <script src="../js/lib/angular-google-maps.min.js"></script>
   </body>
 </html>
