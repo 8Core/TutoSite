@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular
-  .module('TutoSiteApp', ['factories','ngMaterial','ngGeolocation','ngMessages'])
+  .module('TutoSiteApp', ['factories','ngMaterial','ngMessages'])
   .config(IconConfig);
 
 

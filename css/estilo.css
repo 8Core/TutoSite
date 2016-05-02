@@ -1,0 +1,15 @@
+.gridListMatch md-grid-list
+{
+  margin: 8px;
+}
+.gridListMatch .green
+{
+  background: #b9f6ca;
+}
+.gridListMatch .yellow
+{
+  background: #ffff8d;
+}
+.gridListMatch .red {
+  background: #ff8a80;
+}
