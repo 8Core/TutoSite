@@ -1,15 +1,92 @@
+[ng-click]:hover {
+  cursor: pointer;
+}
+
+md-content.md-default-theme {
+  background-color: #eee;
+}
+
+md-sidenav > md-toolbar {
+  padding: 15px;
+  height: 150px;
+  max-height: 150px;
+}
+md-sidenav md-list-item.md-2-line .md-list-item-text {
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+md-sidenav md-divider {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+md-sidenav md-icon {
+  fill: #737373;
+  position: relative;
+}
+md-sidenav .md-avatar {
+  height: 64px;
+  width: 64px;
+}
 .gridListMatch md-grid-list
 {
   margin: 8px;
 }
-.gridListMatch .green
-{
-  background: #b9f6ca;
+md-content {
+    height: calc(100% - 56px);
+    background-image: url("../images/learning.jpg");
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-size:cover;
 }
-.gridListMatch .yellow
-{
-  background: #ffff8d;
+
+#logo{
+    height: 200px;
+    width: 200px;
 }
-.gridListMatch .red {
-  background: #ff8a80;
+
+md-grid-tile .md-button.md-primary.md-fab{
+    position: relative;
+    height: 75px;
+    width: 75px;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0);
+    padding: 0;
+    margin-bottom: 30px;
+
+}
+md-grid-tile .md-button.md-primary.md-fab:not([disabled]):hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+md-grid-tile .md-button.md-fab md-icon{
+    display:block !important;
+    width: 100%;
+    height: 100%;
+}
+md-grid-list md-grid-tile md-grid-tile-footer{
+    text-align: center; display: initial;
+    background-color: rgba(255, 254, 242, 0.29);
+}
+
+.red md-grid-tile-footer h3{
+  font-family: 'Roboto', serif;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+}
+.green md-grid-tile-footer h3{
+  font-family: 'Roboto', serif;
+  font-size: 20px;
+  color:  rgb(23, 169, 182);
+  font-weight:bold;
+}
+.yellow md-grid-tile-footer h3{
+  font-family: 'Roboto', serif;
+  font-size: 20px;
+  color:  rgb(23, 169, 182);
+  font-weight:bold;
 }
