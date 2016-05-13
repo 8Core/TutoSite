@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Tutosite cerca de ti</title>
-        <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body>
-    <html lang="en" ng-app="StarterApp">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tutosite cerca de ti</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  <html lang="en" ng-app="StarterApp">
+
   <head>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
   </head>
+
   <body layout="row" ng-controller="AppCtrl">
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2"
-    md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <md-toolbar class="md-hue-3">
         <span flex></span>
         <div layout="row" layout-align="start center">
@@ -31,7 +36,7 @@
           </div>
         </md-list-item>
         <md-divider></md-divider>
-        <md-subheader  class="md-no-sticky">Management</md-subheader>
+        <md-subheader class="md-no-sticky">Management</md-subheader>
         <md-list-item class="md-2-line" ng-repeat="item in admin" role="link" md-ink-ripple>
           <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
           <div class="md-list-item-text">
@@ -82,41 +87,43 @@
                 placeholder="Search">
               <md-item-template>
                 <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
-              </md-item-template>
-              <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
-                <div ng-message="required">You <b>must</b> have a favorite state.</div>
-                <div ng-message="minlength">Your entry is not long enough.</div>
-                <div ng-message="maxlength">Your entry is too long.</div>
-              </div>
-            </md-autocomplete>
+          </md-item-template>
+          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+            <div ng-message="minlength">Your entry is not long enough.</div>
+            <div ng-message="maxlength">Your entry is too long.</div>
+          </div>
+          </md-autocomplete>
           </span>
         </div>
       </md-toolbar>
 
-            <h3>Selecciona la distancia de busqueda de tutores</h3>
-            <div layout="">
-              <div flex="10" layout="" layout-align="center center">
-                <span class="md-body-1">Kilometros</span>
-              </div>
-              <md-slider flex="" md-discrete="" ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
-              </md-slider>
-            </div>
-
-            <div layout="">
-              <div flex="10" layout="" layout-align="center center">
-                <md-button href="Tutores.html"> Guardar cambios </md-button>
-              </div>
-            </div>
-
-
+      <h3>Selecciona la distancia de busqueda de tutores</h3>
+      <div layout="">
+        <div flex="10" layout="" layout-align="center center">
+          <span class="md-body-1">Kilometros</span>
+        </div>
+        <md-slider flex="" md-discrete="" ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
+        </md-slider>
       </div>
+
+      <div layout="">
+        <div flex="10" layout="" layout-align="center center">
+          <md-button href="Tutores.html"> Guardar cambios </md-button>
+        </div>
+      </div>
+
+
+    </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
   </body>
-</html>
-        <script src="../js/index.js"></script>
-  </body>
+
+  </html>
+  <script src="../js/index.js"></script>
+</body>
+
 </html>
