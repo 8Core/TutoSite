@@ -1,24 +1,24 @@
 module.exports = {
-    getTodos: function (next) {
-        Todo.find().exec(function (err, todos) {
-            if (err) throw err;
-            next(todos);
-        });
-    },
-    addTodo: function (todoVal, next) {
-        Todo.create({
-            value: todoVal
-        }).exec(function (err, todo) {
-            if (err) throw err;
-            next(todo);
-        });
-    },
-    removeTodo: function (todoVal, next) {
-        Todo.destroy({
-            value: todoVal
-        }).exec(function (err, todo) {
-            if (err) throw err;
-            next(todo);
-        });
-    }
+  getTodos: function (callback) {
+			Todo.find().exec(function (err, arg) {
+					if (err) throw err;
+					callback(arg);
+			});
+	},
+	addTodo: function (arg, callback) {
+			Todo.create({
+					value: arg
+			}).exec(function (err, val) {
+					if (err) throw err;
+					callback(val);
+			});
+	},
+	removeTodo: function (arg, callback) {
+			Todo.destroy({
+					value: arg
+			}).exec(function (err, val) {
+					if (err) throw err;
+					callback(val);
+			});
+	}
 };

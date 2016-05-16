@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TutoSite</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../js/lib/mfb/mfb.min.css">
+  </head>
+  <body >
+    <span ng-app="TutoSiteApp">
+          <md-toolbar md-scroll-shrink md-shrink-speed-factor="0.5">
+            <div class="md-toolbar-tools">
+              <h3><span>Tutores en el Area</span></h3>
+            </div>
+          </md-toolbar>
+          <div layout="column" class="relative" layout-fill role="main" ng-controller="locationSearchCtrl">
+            <md-fab-speed-dial  md-direction="down" class="md-fab-top-right ">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab">
+                <md-icon md-svg-src="content:ic_add_24px"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+              <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                <md-icon md-svg-src="social:ic_group_24px" aria-label="Twitter"></md-icon>
+              </md-button>
+              <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                <md-icon md-svg-src="action:ic_dashboard_24px" aria-label="Facebook"></md-icon>
+              </md-button>
+              <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+              <md-icon md-svg-src="content:ic_add_24px" aria-label="Google Hangout"></md-icon>
+              </md-button>
+            </md-fab-actions></md-fab-speed-dial>
+          </div>
+          <div id="locationSearchMap" class="theMap"></div>
+
+    </span>
+    <!-- Angular Material Dependencies -->
+
+    <script src='https://maps.googleapis.com/maps/api/js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-messages.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+   <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+   <!-- Angular Material
+   <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+ --><!-- Maps Api -->
+   <!-- Controller -->
+   <script src="../js/factories/factory.js"></script>
+    <script src="../js/app.module.js"></script>
+    <script src="../js/locationController.js"></script>
+    <!-- Floating Button -->
+    <script src="../js/lib/ngGeolocation.min.js"></script>
+    <script src="../js/lib/angular-google-maps.min.js"></script>
+  </body>
+</html>
