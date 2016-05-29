@@ -2,7 +2,7 @@ angular
   .module('TutoSiteApp')
   .controller('locationSearchCtrl',locationSearchCtrl);
 
-  locationSearchCtrl.$inject = ['$geolocation','$scope','factory'];
+  //locationSearchCtrl.$inject = ['$geolocation','$scope','factory'];
 
   function locationSearchCtrl($geolocation,$scope, factory)
   {
